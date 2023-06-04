@@ -15,55 +15,55 @@ To use the public api, it would be beneficial to understand the main entities an
 ![database-schema](/Public/images/database-schema.jpg "schema")
 
 
-### Questions:
-**Retrieving all possible Questions:**
+### Questions
+Retrieving all possible Questions:
 ```
 /api/questions
 ```
 
-**Retrieving a question data:**:
+Retrieving a question data:
 ```
 /api/questions/{questionID}
 ```
 
-**Retrieving Categories that the particular question belongs to:**
+Retrieving Categories that the particular question belongs to:
 ```
 /api/questions/{questionID}/categories
 ```
 
-### Answers:
-**Retrieving all possible Answers:**
+### Answers
+Retrieving all possible Answers:
 ```
 /api/answers/
 ```
 
-**Retrieving Answers for the particular question:**
+Retrieving Answers for the particular question:
 ```
 /api/answers/{questionID}/
 ```
 ### Categories
-**Retrieving all possible categories:**
+Retrieving all possible categories*
 ```
-/api/categories/
+/api/categories
 ```
 
-**Retrieving category data:** 
+Retrieving category data:
 ```
 /api/categories/{categoryID}/
 ```
 
-**Retrieving all questions that belong to particular category:** 
+Retrieving all questions that belong to particular category:
 ```
 /api/categories/{categoryID}/questions/
 ```
 
 ### Users
-**Retrieving users that have contributed to the Quiz-plz:**
+Retrieving users that have contributed to the Quiz-plz:
 ```
-/api/users/
+/api/users
 ```
 
-**Retrieving questions that a particular user might have created and added to Quiz-plz:**
+Retrieving questions that a particular user might have created and added to Quiz-plz:
 ```
 /api/users/{userID}/questions
 ```
