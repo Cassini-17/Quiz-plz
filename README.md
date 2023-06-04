@@ -37,7 +37,6 @@ To use the public api, it would be beneficial to understand the main entities an
 **Retrieving Answers for the particular question:**
 ```
 /api/answers/{questionID}/
-
 ```
 ### Categories
 **Retrieving all possible categories:**
