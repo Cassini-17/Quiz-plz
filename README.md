@@ -11,7 +11,7 @@ Quiz-plz is a server-side swift app written using Vapor framework, Fluent ORM (p
 Currently, only the admin can authneticate on the front-end and add new questions/categories of questions, however there is a public API which can be used to retrieve already existing data. 
 
 ### Public API
-To use the public api, it would be beneficial to understand the main entities and relatinships between them. Below you can find the database schema:
+To use the public api, it would be beneficial to understand the main entities and relatoinships between them. Below you can find the database schema:
 ![database-schema](/Public/images/database-schema.jpg "schema")
 
 
@@ -34,27 +34,27 @@ Retrieving Categories that the particular question belongs to:
 ### Answers
 Retrieving all possible Answers:
 ```
-/api/answers/
+/api/answers
 ```
 
 Retrieving Answers for the particular question:
 ```
-/api/answers/{questionID}/
+/api/answers/{questionID}
 ```
 ### Categories
-Retrieving all possible categories*
+Retrieving all possible categories:
 ```
 /api/categories
 ```
 
 Retrieving category data:
 ```
-/api/categories/{categoryID}/
+/api/categories/{categoryID}
 ```
 
 Retrieving all questions that belong to particular category:
 ```
-/api/categories/{categoryID}/questions/
+/api/categories/{categoryID}/questions
 ```
 
 ### Users
