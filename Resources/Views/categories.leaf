@@ -2,6 +2,15 @@
 #extend("base"):
 #export("content"):
 
+<head> 
+  <style>
+    .tbl-container {
+      margin: auto;
+      width: 80% !important;
+    }
+  </style>
+</head>
+
 <h2> All Categories </h2>
 
 #if(count(categories) > 0): 
