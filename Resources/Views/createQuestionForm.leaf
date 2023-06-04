@@ -1,0 +1,96 @@
+<!doctype html>
+
+<div class = "container d-flex justify-content-center"> 
+
+	<form method="post">
+    
+   <div class="row">
+    <div class="form-group">
+      <label for="questionText">Question text:</label>
+      <input type="text" name="text" class="form-control"
+      id="questionText" #if(editing): value="#(text)" #endif/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <label for="imageURL">image URL:</label>
+      <input type="text" name="imageURL" class="form-control"
+      id="imageURL" #if(editing): value="#(imageURL)" #endif/>
+    </div>
+  </div>
+
+  <div class="row mt-3 mb-2">
+
+    <div class="col-lg-6">
+      <label for="imageURL">Answer 1:</label>
+      <input type="text" name= "answers[0][option]" class="form-control" id="answer1" #if(editing): value="#atIndex(answers, 0, "option")" #endif>
+      <div class="form-check">
+        <input name = "answers[0][isCorrect]" class="form-check-input" type="checkbox" id="answer1check" #if(editing && atIndex(answers, 0, "isCorrect")): value = "true" checked = "true" #endif>
+        <label class="form-check-label" for="answer1check">
+          correct?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <label for="imageURL">Answer 2:</label>
+      <input type="text" name= "answers[1][option]" class="form-control" id="answer2" #if(editing): value="#atIndex(answers, 1, "option")" #endif>
+      <div class="form-check">
+        <input name = "answers[1][isCorrect]" class="form-check-input" type="checkbox" id="answer2check" #if(editing && atIndex(answers, 1, "isCorrect")): value = "true" checked = "true" #endif>
+        <label class="form-check-label" for="answer2check">
+          correct?
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row mt-3 mb-2">
+
+    <div class="col-lg-6">
+      <label for="imageURL">Answer 3:</label>
+      <input type="text" name= "answers[2][option]" class="form-control" id="answer3" #if(editing): value="#atIndex(answers, 2, "option")" #endif>
+      <div class="form-check">
+        <input name = "answers[2][isCorrect]" class="form-check-input" type="checkbox" id="answer3check" #if(editing && atIndex(answers, 2, "isCorrect")): value = "true" checked = "true" #endif>
+        <label class="form-check-label" for="answer3check">
+          correct?
+        </label>
+      </div>
+    </div> 
+
+    <div class="col-lg-6">
+      <label for="imageURL">Answer 4:</label>
+      <input type="text" name= "answers[3][option]" class="form-control" id="answer4" #if(editing): value="#atIndex(answers, 3, "option")" #endif>
+      <div class="form-check">
+        <input name = "answers[3][isCorrect]" class="form-check-input" type="checkbox" id="answer4check" 
+        #if(editing && atIndex(answers, 3, "isCorrect")): value = "true" checked ="true"  #endif>
+        <label class="form-check-label" for="answer4check">
+          correct?
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+  <div class = "row mt-3">
+    <div class="form-group">
+      <label for="categories">Categories:</label>
+      <select name="categories[]" class="form-control"
+      id="categories" placeholder="Categories" multiple="multiple">
+      #if(editing):
+      #for(category in categories):
+      <option value="#(category.name)" selected="selected"> #(category.name) </option>
+      #endfor
+      #endif
+    </select>
+  </div>
+</div>
+
+<div class = "row mt-3">
+  <div class="form-group" style="text-align: center">
+    <button type="submit" class="btn btn-primary"> #if(editing): Update #else: Submit #endif </button>
+  </div>
+</div>
+
+</div>

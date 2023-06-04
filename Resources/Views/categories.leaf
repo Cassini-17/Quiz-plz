@@ -1,0 +1,50 @@
+<!doctype html>
+#extend("base"):
+#export("content"):
+
+<h2> All Categories </h2>
+
+#if(count(categories) > 0): 
+<div class="tbl-container">
+  <table class="table table-hover table-bordered border-secondary text-center align-middle">
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col"># of questions</th>
+      <th scope="col">actions</th>
+    </tr>
+    <tbody>
+      #for(category in categories): 
+      <tr>
+        <td> 
+          <a href="/categories/#(category.id)">
+            #capitalized(category.name) 
+          </a>
+        </td>
+        <td> 
+          <a>
+            #(category.questionsCount) 
+          </a>
+        </td>
+        <td>
+          <div class="btn-actions"> 
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              edit
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/categories/#(category.id)/edit">Edit category</a></li>
+              <form method="post" action="/categories/#(category.id)/delete">
+                <input class="dropdown-item" type="submit" value="Delete category" href="/categories/#(category.id)/delete">
+              </form>
+            </ul>
+          </div> 
+        </td>
+      </tr>
+      #endfor
+    </tbody>
+  </table>
+</div>
+#else: 
+<h4>There aren’t any categories yet!</h4>
+#endif
+#endexport
+#endextend

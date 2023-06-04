@@ -1,0 +1,63 @@
+<!doctype html>
+#extend("base"):
+#export("content"):
+
+<head> 
+  <style>
+    h3 {
+      padding-top: 20px;
+      padding-left: 15px;
+      text-align: left;
+    }
+
+    .card {
+      margin-top:  15px;
+    }
+
+    dl {
+      padding-left: 15px;
+      padding-right: 900px;
+    }
+
+    p {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  </style>
+</head>
+
+<div class="card w-50 h-25 text-center mx-auto">
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>I know that i know nothing.</p>
+      <footer class="blockquote-footer"><cite title="Source Title">Socrates</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+<h3>
+  About the project
+</h3>
+<p class="lead">
+  Fullstack quiz application written with Swift and Vapor (Serverside framework)
+</p>
+
+<dl class="row">
+  <dt class="col-sm-3">Back-end:</dt>
+  <dd class="col-sm-9">Vapor 4, Fluent ORM (Postgres)</dd>
+
+  <dt class="col-sm-3">Front-end:</dt>
+  <dd class="col-sm-9">Leaf, HTML, CSS, JavaScript</dd>
+
+  <dt class="col-sm-3">Author:</dt>
+  <dd class="col-sm-9">Alex T (<Strong>@Cassini17</Strong>) </dd>
+
+  <dt class="col-sm-3">Github:</dt>
+  <dd class="col-sm-9" > <a href="https://github.com/Cassini-17"> https://github.com/Cassini-17 <a> </dd>
+  </dl>
+  <p align="justify"> This project models a generic question bank that allows to create multiple choice questions and arrange them into suitable categories. Initially, i started coding it a part of my IOS dev internship back in 2021, however Vapor back then was rapidly evolving and documentation was lacking, so many things were confusing to me and I had a lot of doubts about this project. Back then I managed to implement basic API to create questions and retrieve them as a JSON. This summer (2023) I was reviewing the code and decided to give it another shot by rewriting a whole thing from scratch using new Async/Await API, instead of older Promise/Future concurrency model. It turned out to be much more enjoyable than reasoning about "pyramid of doom" as a result of using maps and flatmaps! Additionally, I have implemented the whole front-end using Leaf and a bit of JS, as well as authentication to protect API and some of the "destructive" endpoints. </p>
+
+  #endexport
+  #endextend

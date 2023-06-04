@@ -1,0 +1,10 @@
+<!doctype html>
+#extend("base"):
+#export("content"):
+
+<h2> #(title) </h2>
+
+#extend("createQuestionForm")
+
+#endexport
+#endextend

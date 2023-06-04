@@ -1,0 +1,9 @@
+<!doctype html>
+#extend("base"):
+#export("content"):
+
+<h2> Category: #capitalized(title)</h2>
+#extend("questionsTable")
+
+#endexport
+#endextend

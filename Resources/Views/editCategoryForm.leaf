@@ -1,0 +1,26 @@
+<!doctype html>
+#extend("base"):
+#export("content"):
+
+<h2> Edit category </h2>
+<div class = "container d-flex justify-content-center"> 
+
+	<form method="post">
+   <div class="row mt-2">
+    <div class="form-group">
+      <label for="category">Category name:</label>
+      <input type="text" name="name" class="form-control"
+      id="name" #if(editing): value="#(name)" #endif/>
+    </div>
+  </div>
+
+  <div class = "row mt-2">
+    <div class="form-group" style="text-align: center">
+      <button type="submit" class="btn btn-primary"> Submit</button>
+    </div>
+  </div>
+
+</div>
+
+#endexport
+#endextend

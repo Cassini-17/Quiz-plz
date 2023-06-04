@@ -1,0 +1,75 @@
+<!doctype html>
+<head> 
+  <style>
+    .tbl-container {
+      margin: auto;
+      width: 80% !important;
+    }
+  </style>
+</head>
+
+#if(count(questions) > 0): 
+<div class="tbl-container bdr">
+  <table class="table table-hover table-bordered border-secondary text-center align-middle">
+    <tr>
+      <th scope="col">text</th>
+      <th scope="col">image url</th>
+      <th scope="col">answer 1</th>
+      <th scope="col">answer 2</th>
+      <th scope="col">answer 3</th>
+      <th scope="col">answer 4</th>
+      <th scope="col">created by:</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    #for(question in questions): 
+    <tr>
+      <td>
+        <a>
+          #(question.text)
+        </a>
+      </td>
+      <td> 
+        #if(question.imageURL && question.imageURL != ""):
+        <a href="#(question.imageURL)"> image link </a>
+        #else: 
+        <a> no image</a>
+        #endif
+      </td>
+      #for(answer in question.answers):
+      <td> 
+        #if(answer.isCorrect):
+        <div class="ans-badge">
+          <a> #(answer.option)</a> 
+          <span class="badge text-bg-success">correct</span>
+        </div>
+        #else: 
+        <a> #(answer.option)</a>
+        #endif
+      </td>
+      #endfor
+      <td> 
+        <a> #(question.username) </a>
+      </td>
+      <td>
+        <div class="btn-actions"> 
+          <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            edit
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/questions/#(question.id)/edit">Edit question</a></li>
+            <form method="post" action="/questions/#(question.id)/delete">
+              <input class="dropdown-item" type="submit" value="Delete question" href="/questions/#(question.id)/delete">
+            </form>
+          </ul>
+        </div> 
+      </td>
+    </tr>
+    #endfor
+  </tbody>
+</table>
+</div>
+#else: 
+<h4>There aren’t any questions yet!</h4>
+#endif

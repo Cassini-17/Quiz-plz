@@ -1,0 +1,50 @@
+<!doctype html>
+#extend("base"):
+#export("content"):
+
+<h2> #(title) </h2>
+
+<div class = "alert-container d-flex justify-content-center mt-3">
+	#if(loginError):
+	<div class="alert alert-danger" role="alert">
+		Authentication error. Invalid username or password.
+	</div>
+	#endif
+</div>
+
+<div class = "container d-flex justify-content-center">
+
+	<form method="post">
+
+		<div class = "row"> 
+			<a> <Strong> You have to authenticate in order to acess this resource! </Strong> </a>
+		</div>
+
+		<div class="row mt-3">
+			<div class="form-group">
+				<label for="username"> Username: </label>
+				<input type="text" name="username" class="form-control"
+				id="username"/>
+			</div>
+		</div>
+
+		<div class="row mt-1">
+			<div class="form-group">
+				<label for="password"> Password: </label>
+				<input type="password" name="password"
+				class="form-control" id="password"/>
+			</div>
+		</div>
+
+		<div class = "row mt-2">
+			<div class="form-group" style="text-align: center">
+				<button type="submit" class="btn btn-primary"> Log In </button>
+			</div>
+		</div>
+
+		<!-- end of container -->
+	</form>
+</div>
+
+#endexport
+#endextend
