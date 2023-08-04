@@ -1,13 +1,13 @@
 # Quiz-plz
 Create MCQ questions, arrange them into topics/categories and retrieve them as JSON
 
-**Website currently doesn't render well on mobile, since Viewport tag has not yet been implemented. Please use it from PC!**
+**Website currently doesn't render well on mobile, Please use it from PC!**
 - link to the deployed project on Heroku: https://quiz-plz.herokuapp.com
 
 
 
 ## Description
-Quiz-plz is a server-side swift app written using Vapor framework, Fluent ORM (powered byPostgreSQL). It allows users to retrieve multiple-choice questions in the JSON form and use them where needed (e.g Mobile app).
+Quiz-plz is a server-side swift app written using Vapor framework, Fluent ORM (powered by PostgreSQL). It allows users to retrieve multiple-choice questions in the JSON form and use them where needed (e.g Mobile app).
 Currently, only the admin can authneticate on the front-end and add new questions/categories of questions, however there is a public API which can be used to retrieve already existing data. 
 
 ### Public API
